@@ -1,0 +1,30 @@
+{
+  "headerDefault": {
+    "main": "Asosiy",
+    "languageSwitcher": "Tilni tanlang",
+    "aboutUs": "Tilni tanlang",
+    "services": "Xizmatlar",
+    "partners": "Hamkorlar",
+    "Contacts": "Kontaktlar",
+    "title-1": "Chexiya Respublikasida o'qish haqidagi eng muhim savollarga javoblar",
+    "title-2": "Talab qilinadigan IT kasblarini o'rganing",
+    "title-3": "Bo'lajak talabalar uchun bepul onlayn chex darslari <br/> для будущих студентов"
+  },
+  "AboutUs": {
+    "title": "О нас",
+    "subtitle-1": "GoStudy – чешский учебный центр с правом проведения государственного экзамена.",
+    "subtitle-2": "Мы занимаемся языковой и специальной подготовкой иностранных абитуриентов к поступлению в чешские вузы на бесплатные отделения.",
+    "sutitle-3": "90 % – процент поступления студентов GoStudy в университеты."
+  },
+  "OurServices": {
+    "title": "Наши услуги",
+    "subtitle-1": "Поступление в государственные вузы Чехии"
+  },
+  "headerStudyAbroad": {
+    "main": "Chexiya Respublikasida oliy ta'lim: biz davlat universitetiga kiramiz",
+    "about": "Ta'lim haqida",
+    "advantage": "Afzallik",
+    "questions": "Savollaringiz bormi?",
+    "title": "Chexiya Respublikasida oliy ta'lim: biz davlat universitetiga kiramiz"
+  }
+}
