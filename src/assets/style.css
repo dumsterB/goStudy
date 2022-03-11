@@ -151,12 +151,13 @@ body {
 
 .contentMainTitle {
     color: white;
-    font-size: 30px;
+    font-size: 26px;
 }
 
 .contentText {
-    font-size: 18px;
+    font-size: 15px;
     color: white;
+    margin-top: 5px;
 }
 
 .AboutUsButton {

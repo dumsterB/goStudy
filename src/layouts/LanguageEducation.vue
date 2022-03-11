@@ -16,19 +16,28 @@
             <v-list-item
             >
               <v-list-item-content>
-                <v-list-item-title v-scroll-to="'#aboutStudy'">{{ $t('headerLanguageEducation.about') }}</v-list-item-title>
+                <v-list-item-title v-scroll-to="'#aboutStudy'">{{
+                    $t('headerLanguageEducation.about')
+                  }}
+                </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
             <v-list-item
             >
               <v-list-item-content>
-                <v-list-item-title v-scroll-to="'#advantage'"> {{ $t('headerLanguageEducation.advantage') }}</v-list-item-title>
+                <v-list-item-title v-scroll-to="'#advantage'"> {{
+                    $t('headerLanguageEducation.advantage')
+                  }}
+                </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
             <v-list-item
             >
               <v-list-item-content>
-                <v-list-item-title v-scroll-to="'#provide'"> {{ $t('headerLanguageEducation.provide') }}</v-list-item-title>
+                <v-list-item-title v-scroll-to="'#provide'"> {{
+                    $t('headerLanguageEducation.provide')
+                  }}
+                </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
 
@@ -41,23 +50,32 @@
             <v-list-item
             >
               <v-list-item-content>
-                <v-list-item-title v-scroll-to="'#questions'"> {{ $t('headerLanguageEducation.questions') }}</v-list-item-title>
+                <v-list-item-title v-scroll-to="'#questions'"> {{
+                    $t('headerLanguageEducation.questions')
+                  }}
+                </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list-item-group>
         </v-list>
       </v-navigation-drawer>
-      <v-app-bar
-          class="appBarItEducation"
-          dark
-          elevation="1"
-          app
+      <div
+          class="appBarMobile"
+          style="height: 60px"
       >
-        <v-app-bar-nav-icon class="hidden-sm-and-up " @click="drawer=!drawer"></v-app-bar-nav-icon>
-        <div class="logo">
-          <img  height="40" src="../assets/img/logo2.png" alt="">
+        <div class="d-flex pa-2">
+          <v-app-bar-nav-icon style="color: white" class="mobileHidden " @click="drawer=!drawer"></v-app-bar-nav-icon>
+          <img  class="justify-center pr-5 d-flex ma-auto"  height="40" src="../assets/img/logo2.png" alt="">
         </div>
-
+      </div>
+      <v-app-bar
+          class="appBarDesktop"
+          style="height: 60px"
+      >
+        <div class="d-flex pa-2">
+          <v-app-bar-nav-icon style="color: white" class="mobileHidden" @click="drawer=!drawer"></v-app-bar-nav-icon>
+          <router-link to="/"><img  class="justify-center logo pr-5 d-flex ma-auto"  height="40" src="../assets/img/logo2.png" alt=""></router-link>
+        </div>
         <v-spacer></v-spacer>
         <div class="d-flex desctopHidden">
           <v-btn text class="links" v-scroll-to="'#mainStudy'">
@@ -165,7 +183,7 @@ export default {
     return {
       open: true,
       drawer: false,
-      selectedItem:''
+      selectedItem: ''
     }
   }, methods: {
     changeDrawer() {
@@ -182,5 +200,31 @@ export default {
 </script>
 
 <style scoped>
+.appBarDesktop .links{
+  color: white;
+}
+@media (min-width: 1000px) {
+  .appBarDesktop {
+    background: #013668 !important;
+  }
+  .appBarMobile{
+    display: none;
+  }
+  .mobileHidden{
+    visibility: hidden;
+  }
+}
+@media (max-width: 1000px) {
+  .appBarMobile{
+    background: #013668 !important;
+  }
+  .appBarDesktop{
+    display: none;
+  }
+  .desctopHidden{
+    display: none!important;
+  }
+
+}
 
 </style>

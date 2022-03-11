@@ -276,7 +276,7 @@ export default {
   background: url("../assets/img/dresden.jpg");
   background-size: cover;
   position: relative;
-  height: 100%;
+  height: 100vh;
   box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, .6);
 }
 .advantages{
@@ -352,10 +352,10 @@ export default {
     margin-top: 5px;
   }
   .imgContentLanguage{
-    top: 2%;
+    top: 1%;
   }
   .imageContentLanguageEducation{
-    height: 90vh;
+    height: 105vh;
   }
   .imgLeftSide{
     width: 300px;

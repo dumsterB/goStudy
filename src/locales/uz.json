@@ -1,30 +1,58 @@
 {
   "headerDefault": {
-    "main": "Asosiy",
-    "languageSwitcher": "Tilni tanlang",
-    "aboutUs": "Tilni tanlang",
-    "services": "Xizmatlar",
+    "aboutUs": "Biz haqimizda",
+    "coursesIt": "IT kurslari",
+    "germanyLanguage": "Nemis tili",
+    "studyInCzech": "Chexiyada o'qish",
     "partners": "Hamkorlar",
-    "Contacts": "Kontaktlar",
-    "title-1": "Chexiya Respublikasida o'qish haqidagi eng muhim savollarga javoblar",
+    "contacts": "Kontaktlar",
+    "title-1": "IT va chet tillarini o'rgatish bo'yicha professional akademiya! ",
     "title-2": "Talab qilinadigan IT kasblarini o'rganing",
-    "title-3": "Bo'lajak talabalar uchun bepul onlayn chex darslari <br/> для будущих студентов"
-  },
-  "AboutUs": {
-    "title": "О нас",
-    "subtitle-1": "GoStudy – чешский учебный центр с правом проведения государственного экзамена.",
-    "subtitle-2": "Мы занимаемся языковой и специальной подготовкой иностранных абитуриентов к поступлению в чешские вузы на бесплатные отделения.",
-    "sutitle-3": "90 % – процент поступления студентов GoStudy в университеты."
-  },
-  "OurServices": {
-    "title": "Наши услуги",
-    "subtitle-1": "Поступление в государственные вузы Чехии"
+    "title-3": "Bo'lajak talabalar uchun bepul onlayn chex darslari <br/>",
+    "Back": "Orqaga",
+    "courses": "Kurslar"
   },
   "headerStudyAbroad": {
-    "main": "Chexiya Respublikasida oliy ta'lim: biz davlat universitetiga kiramiz",
+    "main": "Asosiy",
     "about": "Ta'lim haqida",
     "advantage": "Afzallik",
     "questions": "Savollaringiz bormi?",
     "title": "Chexiya Respublikasida oliy ta'lim: biz davlat universitetiga kiramiz"
+  },
+  "headerLanguageEducation": {
+    "main": "Asosiy",
+    "about": "Ta'lim haqida",
+    "advantage": "Преимущество",
+    "provide": "Biz nimani ifodalaymiz",
+    "type": "Metodologiya",
+    "questions": "Savollaringiz bormi?"
+  },
+  "carousel": {
+    "text-1":"Ответы на самые важные вопросы об учебе в Чехии",
+    "text-2": "Научитесь востребаванным професиям IT",
+    "text-3":"Инновационное обучение немецкому языку от носителя"
+  },
+  "aboutUs": {
+    "main_title": "Biz haqimizda",
+    "main": "<h3 class=\"contentMainTitle\">Professional IT va til akademiyasi (PROFITLINGUA) –</h3> <br /> <p class=\"contentText\"> IT sohasida talab qilinadigan ko'nikmalar va xorijiy tillarni innovatsion o'qitish ona tilida so'zlashuvchilardan gibrid usulda tillar! Biz bilan birga hayotingizni yaxshi tomonga o'zgartirishga taklif qilamiz!</p>",
+    "text_2": "Ayni paytda biz xizmatlarni taklif qilamiz:",
+    "text_3": "Gibrid usulda noyob nemis tilini o'qitish, Drezden kasb-hunar akademiyasi bilan birgalikda sertifikat berish bilan",
+    "text_4": "Germaniyada tibbiyot xodimlarining kasbiy darajasini oshirish bo'yicha bepul maslahatlar!",
+    "text_5": "CODIFY LAB xalqaro kompaniyasi bilan birgalikda mashhur IT tillarining eng ilg'or usulini o'rgatish",
+    "text_6": "GOSTUDY bilan birgalikda chex tilini o'rgatish va Chexiya yoki ingliz tillarida Chexiya Respublikasining eng yaxshi universitetlariga kirish bo'yicha maslahatlar!"
+  },
+  "services": {
+    "main_title": "Bizning xizmatlarimiz",
+    "text": "IT sohasida kadrlar tayyorlash va malaka oshirish",
+    "text_2": "Chexiya davlatiga va xususiy universitetlariga qabul",
+    "text_3": "Ona tilida so'zlashuvchidan nemis tilini innovatsion o'rgatish"
+  },
+  "courses": {
+    "text": " <h3 class=\"serviceCardTitle\">Nemis tili kurslari</h3><p class=\"serviceCardText\"> Germaniyalik professor tomonidan o'qitiladigan xalqaro sertifikat</p>",
+    "text_2": " <h3 class=\"serviceCardTitle\">Chexiyadagi universitetlarga kirish</h3><p class=\"serviceCardText\"> chex yoki ingliz tillarida bepul\nChexiya Respublikasidagi oliy ta'lim: biz davlat yoki xususiy universitetga kiramiz.</p>",
+    "text_3": "<h3 class=\"serviceCardTitle\">Talab bo'lgan IT sohalarida kurslar va amaliyot</h3><p class=\"serviceCardText\"> Noldan o'qitish yoki kompaniyalar uchun malaka oshirish</p>"
+  },
+  "footer": {
+    "text":"Bog'lanish uchun <br/> Manzil: Toshkent sh., Oltintepa ko'chasi 28-uy. Landmark Parkent bozori <br/><br/> Raqam: +998 71-203-77-57"
   }
 }

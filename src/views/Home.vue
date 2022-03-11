@@ -1,63 +1,65 @@
 <template>
   <div class="home">
     <div class="aboutUs" id="aboutUs">
-      <h1 class="sectionTitle">О нас</h1>
+      <h1 class="sectionTitle">{{ $t("aboutUs.main_title") }}</h1>
       <v-container>
         <v-row>
           <v-col md="6" lg="6">
             <div class="content">
-              <h3 class="contentMainTitle">ProfitLingua –</h3>
-              <p class="contentText">Учебный центр  Profitlingua пользуется большим успехом у людей, желающих получить языковые знания и навыки для профессионального роста, расширить свой кругозор.  Мы предлагаем Вам изучить Мир с нами.</p>
-              <p class="contentText"> Универсальный учебным центр который включает в себя</p>
+              <span v-html="$t('aboutUs.main')"></span>
+              <p class="contentText">
+                <strong>{{ $t("aboutUs.text_2") }}</strong>
+              </p>
               <ul>
                 <li class="contentText">
-               <strong> Обучение иностранных языков</strong>
+                  {{ $t("aboutUs.text_3") }}
                 </li>
                 <li class="contentText">
-              <strong> Стажировка младшего медицинского персонала в Германии</strong>
+                  {{ $t("aboutUs.text_4") }}
                 </li>
                 <li class="contentText">
-             <strong> Обучение в сфере IT</strong>
+                  {{ $t("aboutUs.text_5") }}
                 </li>
                 <li class="contentText">
-              <strong> Поступление в государственный ВУЗ в Чехии</strong>
+                  {{ $t("aboutUs.text_6") }}
                 </li>
               </ul>
-              <br>
-              <br>
-              <a class="serviceButton" v-scroll-to="'#courses'"> Больше о курсах</a>
+              <br />
+              <br />
+              <a class="serviceButton" v-scroll-to="'#courses'">
+                Больше о курсах</a
+              >
             </div>
           </v-col>
           <v-col md="6" lg="6">
-            <img class=" aboutUsImage" src="../assets/img/srudents.png" alt="">
+            <img class="aboutUsImage" src="../assets/img/srudents.png" alt="" />
           </v-col>
         </v-row>
       </v-container>
-
     </div>
     <div>
       <h1 class="sectionTitle">О нас</h1>
     </div>
     <div class="services" id="services">
-      <br>
-      <h1 class="sectionTitleDark">Наши услуги</h1>
+      <br />
+      <h1 class="sectionTitleDark">{{ $t("services.main_title") }}</h1>
       <v-row class="mt-15">
         <v-col class="serviceItem">
           <div class="text-center">
-            <img height="250" src="../assets/img/1.jpg" alt="">
-            <p class="servicesText">Обучение IT профессиям</p>
+            <img height="250" src="../assets/img/1.jpg" alt="" />
+            <p class="servicesText">{{ $t("services.text") }}</p>
           </div>
         </v-col>
         <v-col class="serviceItem">
-          <div class="text-center ">
-            <img height="250" src="../assets/img/2.jpg" alt="">
-            <p class="servicesText">Поступление в государственные <br> вузы Чехии</p>
+          <div class="text-center">
+            <img height="250" src="../assets/img/2.jpg" alt="" />
+            <p class="servicesText">{{ $t("services.text_2") }}</p>
           </div>
         </v-col>
         <v-col class="serviceItem">
-          <div class="text-center ">
-            <img height="250" src="../assets/img/4.jpg" alt="">
-            <p class="servicesText">Обучение немецескому языку</p>
+          <div class="text-center">
+            <img height="250" src="../assets/img/4.jpg" alt="" />
+            <p class="servicesText">{{ $t("services.text_3") }}</p>
           </div>
         </v-col>
       </v-row>
@@ -70,15 +72,24 @@
               <div class="firstServiceLayout">
                 <v-col md="7" lg="7" sm="12" xs="12" class="colInfo">
                   <div class="ml-2">
-                    <h3 class="serviceCardTitle">Курсы Немецского языка</h3>
-                    <p class="serviceCardText">С профессиональным преподавателем из Германии</p>
-                    <v-card-actions class="text-center serviceButtonCard d-flex">
-                      <a class="serviceButton" @click="courses('languageeducation')">Подробнее</a>
+                    <span v-html="$t('courses.text')"></span>
+                    <v-card-actions
+                      class="text-center serviceButtonCard d-flex"
+                    >
+                      <a
+                        class="serviceButton"
+                        @click="courses('languageeducation')"
+                        >Подробнее</a
+                      >
                     </v-card-actions>
                   </div>
                 </v-col>
                 <v-col md="5" lg="5" sm="12" xs="12" class="colImage">
-                  <img class="serviceCardImage " src="../assets/img/4804442.png" alt="">
+                  <img
+                    class="serviceCardImage"
+                    src="../assets/img/4804442.png"
+                    alt=""
+                  />
                 </v-col>
               </div>
             </v-row>
@@ -87,18 +98,25 @@
         <v-col md="4" lg="4" sm="12" xs="12" class="mainCol">
           <div class="secondService">
             <v-row class="justify-center">
-              <div class="firstServiceLayout ">
+              <div class="firstServiceLayout">
                 <v-col md="7" lg="7" sm="12" class="colInfo">
                   <div class="">
-                    <h3 class="serviceCardTitle ">Поступление в вузы Чехии на бюджет</h3>
-                    <p class="serviceCardText">Высшее образование в Чехии: поступаем в государственный вуз.</p>
-                    <v-card-actions class="text-center serviceButtonCard  d-flex">
-                      <a class="serviceButton" @click="courses('studyabroad')">Подробнее</a>
+                    <span v-html="$t('courses.text_2')"></span>
+                    <v-card-actions
+                      class="text-center serviceButtonCard d-flex"
+                    >
+                      <a class="serviceButton" @click="courses('studyabroad')"
+                        >Подробнее</a
+                      >
                     </v-card-actions>
                   </div>
                 </v-col>
                 <v-col md="5" lg="5" sm="12" class="colImage">
-                  <img class="serviceCardImage serviceCardImage " src="../assets/img/410814-PDWTNM-412.png" alt="">
+                  <img
+                    class="serviceCardImage serviceCardImage"
+                    src="../assets/img/410814-PDWTNM-412.png"
+                    alt=""
+                  />
                 </v-col>
               </div>
             </v-row>
@@ -107,18 +125,29 @@
         <v-col md="4" lg="4" sm="12" xs="12" class="mainCol">
           <div class="firstService">
             <v-row class="justify-center">
-              <div class="firstServiceLayout ">
-                <v-col md="7" lg="7" sm="12" xs="12" class=" colInfo">
+              <div class="firstServiceLayout">
+                <v-col md="7" lg="7" sm="12" xs="12" class="colInfo">
                   <div class="ml-5">
-                    <h3 class="serviceCardTitle">Курсы по всем IT направлением</h3>
-                    <p class="serviceCardText">Обучись с нуля до начинающего специалиста в любой IT профессии</p>
-                    <v-card-actions class="text-center  serviceButtonCard d-flex">
-                      <a class="serviceButton" style="text-decoration: none" target="_blank" href="https://www.codifylab.com/">Подробнее</a>
+                    <span v-html="$t('courses.text_3')"></span>
+                    <v-card-actions
+                      class="text-center serviceButtonCard d-flex"
+                    >
+                      <a
+                        class="serviceButton"
+                        style="text-decoration: none"
+                        target="_blank"
+                        href="https://www.codifylab.com/"
+                        >Подробнее</a
+                      >
                     </v-card-actions>
                   </div>
                 </v-col>
                 <v-col md="5" lg="5" sm="12" xs="12" class="colImage">
-                  <img class="serviceCardImage" src="../assets/img/4804442.png" alt="">
+                  <img
+                    class="serviceCardImage"
+                    src="../assets/img/4804442.png"
+                    alt=""
+                  />
                 </v-col>
               </div>
             </v-row>
@@ -126,55 +155,63 @@
         </v-col>
       </v-row>
     </div>
-    <div class="Collobration" id="features">
-      <br>
+    <div class="Collobration" id="partners">
+      <br />
       <h1 class="sectionTitleDark">Наши партнеры</h1>
-      <br><br>
+      <br /><br />
       <div class="justify-center d-flex">
         <v-row>
           <v-col sm="6" lg="4" md="4" cols="12">
-            <img style="display:flex;margin: auto" class="" height="130" width="250" src="../assets/img/LogoK.jpg"
-                 alt="">
+            <img
+              style="display: flex; margin: auto"
+              class=""
+              height="100"
+              width="280"
+              src="../assets/img/LogoK.jpg"
+              alt=""
+            />
           </v-col>
           <v-col sm="6" lg="4" md="4" cols="12">
-            <img style="display:flex;margin: auto" class="" height="100" width="250"
-                 src="../assets/img/goStudy.png" alt="">
+            <img
+              style="display: flex; margin: auto"
+              class=""
+              height="100"
+              width="280"
+              src="https://static.wixstatic.com/media/b868af_c4bc2693f43c4514ae3245eb7a158cc3~mv2_d_5000_1200_s_2.jpg/v1/fill/w_980,h_235,al_c,q_90/b868af_c4bc2693f43c4514ae3245eb7a158cc3~mv2_d_5000_1200_s_2.jpg"
+              alt=""
+            />
           </v-col>
           <v-col sm="6" lg="4" md="4" cols="12">
-            <img style="display:flex;margin: auto" class="mt-5" height="120" width="250"
-                 src="../assets/img/codifayLogo.png" alt="">
+            <img
+              style="display: flex; margin: auto"
+              class=""
+              height="105"
+              width="280"
+              src="https://static.tildacdn.com/tild3536-3730-4237-a661-646339333962/Untitled-2-01.png"
+              alt=""
+            />
           </v-col>
         </v-row>
       </div>
-      <br><br>
+      <br /><br />
+    </div>
+    <div >
+      <formAndQuestions></formAndQuestions>
     </div>
   </div>
 </template>
 
 <script>
-import gsap from 'gsap'
-
+import formAndQuestions from "@/components/FormAndQuestions";
 export default {
-  name: 'Home',
-  components: {},
+  name: "Home",
+  components: {formAndQuestions},
   methods: {
-    beforeEnter(el) {
-      el.style.transform = 'translateY(-60px)'
-      el.style.opacity = 0
-    },
     courses(value) {
-      this.$router.push(value)
+      this.$router.push(value);
     },
-    enter(el) {
-      gsap.to(el, {
-        duration: 1,
-        y: 0,
-        opacity: 1,
-        ease: 'bounce.out'
-      })
-    }
-  }
-}
+  },
+};
 </script>
 <style>
 .slider {
@@ -187,7 +224,8 @@ export default {
   width: 960px;
 }
 
-.slider::before, .slider::after {
+.slider::before,
+.slider::after {
   background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
   content: "";
   height: 100px;
@@ -217,5 +255,4 @@ export default {
   height: 100px;
   width: 250px;
 }
-
 </style>

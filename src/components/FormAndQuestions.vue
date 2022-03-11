@@ -21,16 +21,6 @@
             label="Ваше имя"
             required
         ></v-text-field>
-
-        <v-text-field
-            dark
-            v-model="email"
-            outlined
-            :rules="emailRules"
-            label="Ваш e-mail"
-            required
-        ></v-text-field>
-
         <v-text-field
             dark
             v-model="email"

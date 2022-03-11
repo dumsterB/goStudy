@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-app>
-      <v-navigation-drawer app v-model="drawer" temporary>
+      <v-navigation-drawer app v-model="drawer">
         <v-list shaped>
           <v-subheader>REPORTS</v-subheader>
           <v-list-item-group
@@ -11,46 +11,57 @@
             <v-list-item
             >
               <v-list-item-content>
-                <v-list-item-title v-scroll-to="'#main'" > {{ $t('headerDefault.main') }}</v-list-item-title>
+                <v-list-item-title v-scroll-to="'#aboutUs'"> {{ $t('headerDefault.aboutUs') }}</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
             <v-list-item
             >
               <v-list-item-content>
-                <v-list-item-title v-scroll-to="'#aboutUs'" >    {{ $t('headerDefault.aboutUs') }}</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item
-            >
-            <v-list-item-content>
-                <v-list-item-title v-scroll-to="'#services'" > {{ $t('headerDefault.services') }}</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item
-            >
-              <v-list-item-content>
-                <v-list-item-title v-scroll-to="'#features'" > {{ $t('headerDefault.partners') }}</v-list-item-title>
+                <v-list-item-title><a style="text-decoration: none; color: rgba(0, 0, 0, 0.87);" target="_blank"
+                                      href="https://www.codifylab.com/">{{ $t('headerDefault.coursesIt') }}</a>
+                </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
             <v-list-item
             >
               <v-list-item-content>
-                <v-list-item-title v-scroll-to="'#contacts'" > {{ $t('headerDefault.Contacts') }}</v-list-item-title>
+                <v-list-item-title @click="handlerRoute('languageeducation')"> {{
+                    $t('headerDefault.germanyLanguage')
+                  }}
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+            <v-list-item
+            >
+              <v-list-item-content>
+                <v-list-item-title @click="handlerRoute('studyabroad')"> {{
+                    $t('headerDefault.studyInCzech')
+                  }}
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+            <v-list-item
+            >
+              <v-list-item-content>
+                <v-list-item-title v-scroll-to="'#partners'"> {{ $t('headerDefault.partners') }}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+            <v-list-item
+            >
+              <v-list-item-content>
+                <v-list-item-title v-scroll-to="'#contacts'"> {{ $t('headerDefault.contacts') }}</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list-item-group>
         </v-list>
       </v-navigation-drawer>
-
-      <v-app-bar
-          class="appBarDefault"
-          dark
-          elevation="1"
-          app
+      <div
+          class="appBarMobile"
+          style="height: 60px"
       >
-        <v-app-bar-nav-icon class="hidden-sm-and-up " @click="drawer=!drawer"></v-app-bar-nav-icon>
-        <div class="logo">
-          <img  height="40" src="../assets/img/logo2.png" alt="">
+        <div class="d-flex pa-2">
+          <v-app-bar-nav-icon style="color: white" class="mobileHidden " @click="drawer=!drawer"></v-app-bar-nav-icon>
+          <img class="justify-center logo pr-5 d-flex ma-auto" height="40" src="../assets/img/logo2.png" alt="">
         </div>
         <v-spacer></v-spacer>
         <div class="d-flex desctopHidden">
@@ -81,7 +92,7 @@
                   v-on="on"
                   elevation="0"
               >
-                {{currentLanguage}}
+                {{ currentLanguage }}
               </v-btn>
             </template>
             <v-list>
@@ -89,7 +100,60 @@
                   v-for="language of languages"
                   :key="language.val"
               >
-                <v-btn elevation="0" @click="changeLanguage(language)">{{language.text}}</v-btn>
+                <v-btn elevation="0" @click="changeLanguage(language)">{{ language.text }}</v-btn>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </div>
+      </div>
+      <v-app-bar
+          class="appBarDesktop"
+          dark
+          style="height: 60px"
+          elevation="1"
+          app
+      >
+        <v-app-bar-nav-icon class="mobileHidden " @click="drawer=!drawer"></v-app-bar-nav-icon>
+        <img height="40" src="../assets/img/logo2.png" alt="">
+        <v-spacer></v-spacer>
+        <div class="d-flex desctopHidden">
+          <v-btn text class="links" v-scroll-to="'#aboutUs'">
+            {{ $t('headerDefault.aboutUs') }}
+          </v-btn>
+          <v-btn text class="links">
+            <a style="text-decoration: none;color:white" target="_blank" href="https://www.codifylab.com/">
+              {{ $t('headerDefault.coursesIt') }}</a>
+          </v-btn>
+          <v-btn text class="links" @click="handlerRoute('languageeducation')">
+            {{ $t('headerDefault.germanyLanguage') }}
+          </v-btn>
+          <v-btn text class="links" @click="handlerRoute('studyabroad')">
+            {{ $t('headerDefault.studyInCzech') }}
+          </v-btn>
+          <v-btn text class="links" v-scroll-to="'#partners'">
+            {{ $t('headerDefault.partners') }}
+          </v-btn>
+          <v-btn text class="links" v-scroll-to="'#contacts'">
+            {{ $t('headerDefault.contacts') }}
+          </v-btn>
+          <v-menu offset-y>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                  text class="links"
+                  dark
+                  v-bind="attrs"
+                  v-on="on"
+                  elevation="0"
+              >
+                {{ currentLanguage }}
+              </v-btn>
+            </template>
+            <v-list>
+              <v-list-item
+                  v-for="language of languages"
+                  :key="language.val"
+              >
+                <v-btn elevation="0" @click="changeLanguage(language)">{{ language.text }}</v-btn>
               </v-list-item>
             </v-list>
           </v-menu>
@@ -141,10 +205,7 @@
                   <h1>Контакты</h1>
                   <div class="mt-10">
 
-                    <p class="text-sm-body-1"><strong>Адресс: </strong> 28 Oltintepa Street, Tashkent 100016, Uzbekistan
-                    </p>
-                    <p class="text-sm-body-1"><strong>Номер: </strong>+998 71-203-77-57
-                    </p>
+                    <p><strong v-html="$t('footer.text')"></strong></p>
 
                     <v-btn
                         class="mx-4 white--text"
@@ -203,25 +264,32 @@ export default {
   data() {
     return {
       open: true,
+      selectedItem: '',
       drawer: false,
-      currentLanguage:'Русский-язык',
-      languages:[{val:'ru',text:'Русский-язык'},{val:'uz',text:'Uzbek-tili'}],
+      currentLanguage: 'Русский-язык',
+      languages: [{val: 'ru', text: 'Русский-язык'}, {val: 'uz', text: 'Uzbek-tili'}],
       carousels: [
         {
-          text: 'Ответы на самые важные вопросы <br /> об учебе в Чехии ',
+          text: this.$t("carousel.text-1"),
           img: 'https://proprikol.ru/wp-content/uploads/2019/10/krasivye-kartinki-pragi-36.jpg'
         },
         {
-          text: 'Научитесь востребаванным професиям IT ',
+          text: this.$t("carousel.text-2"),
           img: 'https://systemlines.ru/wp-content/uploads/2021/02/o_kompanii.jpg'
         },
         {
-          text: 'Ответы на самые важные вопросы <br /> об учебе в Чехии ',
+          text: this.$t("carousel.text-3"),
           img: 'https://w-dog.ru/wallpapers/2/2/503964941023421/praga-chexiya-maj-2015-g-utro.jpg'
         }
       ]
     }
-  }, methods: {
+  },
+  computed:{
+    carouselText1(){
+      return this.$t("carousel.text-1")
+    }
+  },
+  methods: {
     changeDrawer() {
       this.open = !this.open
       gsap.to('#mobile-menu', {
@@ -231,14 +299,47 @@ export default {
         ease: 'expo.out',
       })
     },
-    changeLanguage(val){
-      this.$i18n.locale=val.val
-      this.currentLanguage=val.text
+    handlerRoute(route) {
+      this.$router.push(route)
+    },
+    changeLanguage(val) {
+      this.$i18n.locale = val.val
+      this.currentLanguage = val.text
     }
   }
 }
 </script>
 
 <style scoped>
+.appBarDesktop .links {
+  color: white;
+}
 
+@media (min-width: 1000px) {
+  .appBarDesktop {
+    background: #013668 !important;
+  }
+
+  .appBarMobile {
+    display: none;
+  }
+
+  .mobileHidden {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 1000px) {
+  .appBarMobile {
+    background: #013668 !important;
+  }
+
+  .appBarDesktop {
+    display: none;
+  }
+
+  .desctopHidden {
+    display: none !important;
+  }
+}
 </style>
