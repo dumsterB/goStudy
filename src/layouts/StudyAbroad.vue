@@ -10,27 +10,29 @@
             <v-list-item
             >
               <v-list-item-content>
-                <v-list-item-title v-scroll-to="'#mainStudy'"> {{ $t('headerDefault.main') }}</v-list-item-title>
+                <v-list-item-title v-scroll-to="'#aboutStudy'">{{$t('headerStudyAbroad.about')}}</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
             <v-list-item
             >
               <v-list-item-content>
-                <v-list-item-title v-scroll-to="'#aboutStudy'">Об образовании</v-list-item-title>
+                <v-list-item-title v-scroll-to="'#advantageStudy'">{{$t('headerStudyAbroad.advantage')}}</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
             <v-list-item
             >
               <v-list-item-content>
-                <v-list-item-title v-scroll-to="'#advantageStudy'">   Преимущество</v-list-item-title>
+                <v-list-item-title v-scroll-to="'#questionsStudy'">{{$t('headerStudyAbroad.about')}}</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item
-            >
-              <v-list-item-content>
-                <v-list-item-title v-scroll-to="'#questionsStudy'">    Оставлись вопросы?</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
+            <div class="ml-2">
+              <v-btn  v-if="currentLanguage==='ru'" @click="changeLanguage('uz')" dark style="background: transparent;" elevation="0">
+                <country-flag  style="margin-top: -4px"  country='rus' size='normal'/>
+              </v-btn>
+              <v-btn v-if="currentLanguage==='uz'" @click="changeLanguage('ru')" dark style="background: transparent" elevation="0">
+                <country-flag style="margin-top: -4px"  country='uz' size='normal'/>
+              </v-btn>
+            </div>
           </v-list-item-group>
         </v-list>
       </v-navigation-drawer>
@@ -61,6 +63,7 @@
       <v-app-bar
           class="appBarDesktop"
           dark
+          id="appBar"
           elevation="1"
           app
       >
@@ -70,18 +73,23 @@
         </div>
         <v-spacer></v-spacer>
         <div class="d-flex desctopHidden">
-          <v-btn text class="links" v-scroll-to="'#mainStudy'">
-            {{ $t('headerDefault.main') }}
-          </v-btn>
           <v-btn text class="links" v-scroll-to="'#aboutStudy'">
-            Об образовании
+         {{$t('headerStudyAbroad.about')}}
           </v-btn>
           <v-btn text class="links" v-scroll-to="'#advantageStudy'">
-            Преимущество
+            {{$t('headerStudyAbroad.advantage')}}
           </v-btn>
           <v-btn text class="links" v-scroll-to="'#questionsStudy'">
-            Оставлись вопросы?
+            {{$t('headerStudyAbroad.about')}}
           </v-btn>
+          <div class="ml-2">
+            <v-btn  v-if="currentLanguage==='ru'" @click="changeLanguage('uz')" dark style="background: transparent;" elevation="0">
+              <country-flag  style="margin-top: -4px"  country='rus' size='normal'/>
+            </v-btn>
+            <v-btn v-if="currentLanguage==='uz'" @click="changeLanguage('ru')" dark style="background: transparent" elevation="0">
+              <country-flag style="margin-top: -4px"  country='uz' size='normal'/>
+            </v-btn>
+          </div>
         </div>
       </v-app-bar>
       <!-- Sizes your content based upon application components -->
@@ -103,13 +111,10 @@
             <v-row class="pa-10">
               <v-col>
                 <v-card-text>
-                  <h1>Контакты</h1>
+                  <h1>{{$t('footer.contact')}}</h1>
                   <div class="mt-10">
 
-                    <p class="text-sm-body-1"><strong>Адресс: </strong> 28 Oltintepa Street, Tashkent 100016, Uzbekistan
-                    </p>
-                    <p class="text-sm-body-1"><strong>Номер: </strong>+998 71-203-77-57
-                    </p>
+                    <p><strong v-html="$t('footer.text')"></strong></p>
 
                     <v-btn
                         class="mx-4 white--text"
@@ -160,26 +165,29 @@
 
 <script>
 
-import gsap from 'gsap'
 
+import CountryFlag from 'vue-country-flag'
 export default {
-  name: "Default",
+  components:{
+    CountryFlag
+  },
   data() {
     return {
       open: true,
       drawer: false,
       selectedItem:'',
+      currentLanguage: 'ru',
+      languages: [{val: 'ru', text: 'Русский-язык'}, {val: 'uz', text: 'Uzbek-tili'}],
     }
   }, methods: {
     changeDrawer() {
       this.open = !this.open
-      gsap.to('#mobile-menu', {
-        duration: 3,
-        y: 1,
-        opacity: 1,
-        ease: 'expo.out',
-      })
     },
+    changeLanguage(val) {
+      this.$i18n.locale = val
+      this.currentLanguage = val
+      console.log(val)
+    }
   }
 }
 </script>

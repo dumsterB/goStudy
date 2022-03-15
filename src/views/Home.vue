@@ -27,8 +27,7 @@
               <br />
               <br />
               <a class="serviceButton" v-scroll-to="'#courses'">
-                Больше о курсах</a
-              >
+                {{$t('more_courses')}}</a>
             </div>
           </v-col>
           <v-col md="6" lg="6">

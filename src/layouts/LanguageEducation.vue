@@ -10,7 +10,7 @@
             <v-list-item
             >
               <v-list-item-content>
-                <v-list-item-title v-scroll-to="'#main'"> {{ $t('headerLanguageEducation.main') }}</v-list-item-title>
+                <v-list-item-title  @click="$router.push('/')"> {{ $t('headerLanguageEducation.main') }}</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
             <v-list-item
@@ -56,6 +56,14 @@
                 </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
+            <div class="ml-2">
+              <v-btn  v-if="currentLanguage==='ru'" @click="changeLanguage('uz')" dark style="background: transparent;" elevation="0">
+                <country-flag  style="margin-top: -4px"  country='rus' size='normal'/>
+              </v-btn>
+              <v-btn v-if="currentLanguage==='uz'" @click="changeLanguage('ru')" dark style="background: transparent" elevation="0">
+                <country-flag style="margin-top: -4px"  country='uz' size='normal'/>
+              </v-btn>
+            </div>
           </v-list-item-group>
         </v-list>
       </v-navigation-drawer>
@@ -71,6 +79,8 @@
       <v-app-bar
           class="appBarDesktop"
           style="height: 60px"
+          app
+          id="appBar"
       >
         <div class="d-flex pa-2">
           <v-app-bar-nav-icon style="color: white" class="mobileHidden" @click="drawer=!drawer"></v-app-bar-nav-icon>
@@ -96,6 +106,14 @@
           <v-btn text class="links" v-scroll-to="'#questions'">
             {{ $t('headerLanguageEducation.questions') }}
           </v-btn>
+          <div class="ml-2">
+            <v-btn  v-if="currentLanguage==='ru'" @click="changeLanguage('uz')" dark style="background: transparent;" elevation="0">
+              <country-flag  style="margin-top: -4px"  country='rus' size='normal'/>
+            </v-btn>
+            <v-btn v-if="currentLanguage==='uz'" @click="changeLanguage('ru')" dark style="background: transparent" elevation="0">
+              <country-flag style="margin-top: -4px"  country='uz' size='normal'/>
+            </v-btn>
+          </div>
 
         </div>
       </v-app-bar>
@@ -118,13 +136,10 @@
             <v-row class="pa-10">
               <v-col>
                 <v-card-text>
-                  <h1>Контакты</h1>
+                  <h1>{{$t('footer.contact')}}</h1>
                   <div class="mt-10">
 
-                    <p class="text-sm-body-1"><strong>Адресс: </strong> 28 Oltintepa Street, Tashkent 100016, Uzbekistan
-                    </p>
-                    <p class="text-sm-body-1"><strong>Номер: </strong>+998 71-203-77-57
-                    </p>
+                    <p><strong v-html="$t('footer.text')"></strong></p>
 
                     <v-btn
                         class="mx-4 white--text"
@@ -175,26 +190,28 @@
 
 <script>
 
-import gsap from 'gsap'
-
+import CountryFlag from 'vue-country-flag'
 export default {
-  name: "Default",
+  components:{
+    CountryFlag
+  },
   data() {
     return {
       open: true,
       drawer: false,
-      selectedItem: ''
+      selectedItem: '',
+      currentLanguage: 'ru',
+      languages: [{val: 'ru', text: 'Русский-язык'}, {val: 'uz', text: 'Uzbek-tili'}],
     }
   }, methods: {
     changeDrawer() {
       this.open = !this.open
-      gsap.to('#mobile-menu', {
-        duration: 3,
-        y: 1,
-        opacity: 1,
-        ease: 'expo.out',
-      })
     },
+    changeLanguage(val) {
+      this.$i18n.locale = val
+      this.currentLanguage = val
+      console.log(val)
+    }
   }
 }
 </script>

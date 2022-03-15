@@ -13,11 +13,9 @@
     "courses": "Kurslar"
   },
   "headerStudyAbroad": {
-    "main": "Asosiy",
     "about": "Ta'lim haqida",
-    "advantage": "Afzallik",
-    "questions": "Savollaringiz bormi?",
-    "title": "Chexiya Respublikasida oliy ta'lim: biz davlat universitetiga kiramiz"
+    "advantage": "Преимущество",
+    "questions": "Savollaringiz bormi?"
   },
   "headerLanguageEducation": {
     "main": "Asosiy",
@@ -48,11 +46,46 @@
     "text_3": "Ona tilida so'zlashuvchidan nemis tilini innovatsion o'rgatish"
   },
   "courses": {
-    "text": " <h3 class=\"serviceCardTitle\">Nemis tili kurslari</h3><p class=\"serviceCardText\"> Germaniyalik professor tomonidan o'qitiladigan xalqaro sertifikat</p>",
-    "text_2": " <h3 class=\"serviceCardTitle\">Chexiyadagi universitetlarga kirish</h3><p class=\"serviceCardText\"> chex yoki ingliz tillarida bepul\nChexiya Respublikasidagi oliy ta'lim: biz davlat yoki xususiy universitetga kiramiz.</p>",
-    "text_3": "<h3 class=\"serviceCardTitle\">Talab bo'lgan IT sohalarida kurslar va amaliyot</h3><p class=\"serviceCardText\"> Noldan o'qitish yoki kompaniyalar uchun malaka oshirish</p>"
+    "text": " <h3 class=\"serviceCardTitle\">Ona tilida so'zlashuvchidan innovatsion nemis tilini o'rgatish</h3><p class=\"serviceCardText\">Germaniya professori tomonidan xalqaro sertifikatga ega nemis tili kurslari</p>",
+    "text_2": " <h3 class=\"serviceCardTitle\">Chexiyadagi davlat va xususiy universitetlarga kirish</h3><p class=\"serviceCardText\">chex yoki ingliz tillarida bepul\nChexiya Respublikasidagi oliy ta'lim: biz davlat yoki xususiy universitetga kiramiz.</p>",
+    "text_3": "<h3 class=\"serviceCardTitle\">IT sohasida o'qitish va malaka oshirish <br/> </h3><p class=\"serviceCardText\"> Eng talabchan IT yo'nalishi bo'yicha kurslar va amaliyotlar Noldan o'qitish yoki kompaniyalar uchun malaka oshirish</p>"
+  },
+  "formOfQuestions": {
+    "text": "Savollaringiz bormi?",
+    "text_2": "Iltimos, ushbu oddiy shaklni to'ldiring va biz bir ish kuni ichida siz bilan bog'lanib, barcha savollaringizga javob beramiz",
+    "text_3": "Agar telefoningizni bizga qoldirsangiz,\nBiz sizga qo'ng'iroq qilamiz  va hamma narsani bepul aytib beramiz."
+  },
+  "german": {
+    "main_title": "Drezdenlik o'qituvchi bilan birgalikda PROFITLINGUA bilan gibrid usulda nemis tilini samarali o'rganing va xalqaro sertifikatga ega bo'ling!",
+    "text": "<p class=\"title-secondary\"> Kulturakademie Drezden -</p> 1995 yildan buyon professional tillar va kasbiy ko'nikmalarni o'rgatib kelayotgan A1 dan C2 darajasigacha bo'lgan Professional nemis tilini o'rganish akademiyasi PROFITLINGUA da til o'rgatish bo'yicha professorlarni taqdim etadi. Toshkent gibrid usulda o‘qitish.<br/> <br/> Kulturakademie Dresden 10 yildan ortiq vaqt davomida tibbiyot xodimlari uchun sertifikatlangan moslashuv kurslarini o'tkazmoqda. Kurs Drezden akademiyasi tomonidan olib boriladigan nazariy qismdan va ish beruvchining ta'lim muassasasida olinishi mumkin bo'lgan amaliy qismdan iborat. <br/><br/> Yevropa Ittifoqidan tashqaridagi davlatdan kelgan va Germaniyada oʻz kasbini qoʻllashni xohlovchi hamshiralar Germaniyada ularning xorijiy kasbiy malakasi sifatida tan olinishi kerak. Shuning uchun, Germaniyada hamshiraning kasbiy unvonidan foydalanish huquqiga ega bo'ling.",
+    "text_2": "Orzularingizni amalga oshiring va nemis tilida gaplashishni boshlang!",
+    "card_title": "EVROPADAGI ENG ISHLAB CHIQARISH TILLARDAN BIRIDA ISTONCHI GAPIRISHNI BOSHLASH",
+    "card_subtitle": "Nemis tilida ona tilida so'zlashuvchi bilan ishonchli va chiroyli gaplashishni boshlang va Germaniyaga keyingi safaringizda do'stlaringizni hayratda qoldiring",
+    "card_title_1": "O‘QITISHNING INNOVATSION USULI – GİBRID",
+    "card_subtitle_1": "Nemis professori guruh bilan veb-kamera va ekran orqali muloqot qiladi va eng sof nemis tilida urg‘usiz dars beradi. Saytda tajribali nemis tili o'qituvchisi oflayn guruh ishini muvofiqlashtiradi va o'quvchilarga tafsilotlarni tushuntiradi. Shunday qilib, nemis muhitiga sho'ng'ish oson va samarali tarzda amalga oshiriladi!",
+    "card_title_2": "ULAR BILAN MUAMMOSIZ TUSHUNISH VA ALOQA BO'LASHNI BOSHLASH",
+    "card_subtitle_2": "Siz asl nusxadagi nemislar bilan muloqot qilishni va filmlar va kitoblardan zavqlanishni qanchalik tez o'rganishingizga hayron qolasiz!",
+    "card_title_3": "KOMPLEKSLARSIZ TA'LIM OLING",
+    "card_subtitle_3": "Germaniya go'zallik va tarix mamlakati ekanligi ajablanarli emas: til hayotning barcha nafis, jozibali tomonlarini aks ettirgan, biz grammatika va lug'atni o'rganishda ko'rib chiqamiz.",
+    "card_title_4": "NEMANIYA MADANIYATI OLAMIGA SHUVIRING VA PSIXOLOGIK TO'SIQNI YETGAN",
+    "card_subtitle_4": "Nemis madaniyati va hayotining ajoyib olamiga sho'ng'ib, siz tilni osongina o'rganasiz, chunki siz uni bolalikda to'liq suvga cho'mish orqali o'rgangan bo'lar edingiz.",
+    "card_title_5": "KUNiga FAQAT 1,5 SOAT, HAFTADA 3 MARTA VA NATIJALARI DAROQDA KOʻRINADI",
+    "card_subtitle_5": "Bizning metodologiyamiz Germaniyadagi kabi til o‘rganishga asoslangan. Biz yangi kitoblardan va XXI asr innovatsion uskunalari sirlaridan foydalanamiz!",
+    "text_3": "BIZ NIMADA FARQLANIB KETAMIZ?",
+    "text_subtitle": "PROFITLINGUA taklif qiladi:",
+    "card_text": "- Toshkentdagi barcha maktablardan farq qiladigan kitob va materiallardan foydalangan holda ona tilida so‘zlashuvchi bilan birgalikda nemis tilini o‘rganishning o‘ziga xos usuli. Biz \"u erda\" qo'llaniladigan o'quv dasturini kuzatmoqdamiz) ",
+    "card_text_2": "- Maksimal 6 oy ichida B1 darajasiga erishish kafolatlanadi!",
+    "card_text_3":"- Shaxsiy maslahatlar va uy vazifalarini maxsus nazorat qilish tufayli har bir talabaga individual yondashish",
+    "card_text_4": "- Birinchi darsdanoq nemis tili bilan nemis tilida gaplashamiz va faqat kerakli materialni o‘rgatishga e’tibor beramiz. Biz 21-asrda keraksiz materiallarni chetga surib qo'yamiz!",
+    "card_text_5": "- Imtihonlar va test sinovlari Germaniyadan kelgan kameralar nazorati ostida onlayn tarzda o'tkaziladi!",
+    "card_text_6": "- Nemis maktabidan sertifikat olasiz, go‘yo u yerda o‘qigansiz va u Germaniyaning O‘zbekistondagi konsulligi tomonidan avtomatik tarzda tan olinadi!",
+    "text_4": "TIBBIYOT XODIMLARI UCHUN MAXSUS TAKLIF",
+    "subtitle": "<p class=\"title-secondary\">PROFITLINGUA tibbiy nemis tili kurslari mahalliy bozorda noyobdir! </p> - Biz sizga tibbiy nemis tilini 0 dan o'rgatamiz va Drezden Kulturakademie'da o'qishni davom ettirishga tayyorlaymiz! <br/> <br/> - O'zbekistonda ham, Germaniyada ham eng tirishqoq talabalar uchun mutlaqo BEPUL bo'lishi mumkin! <br/> <br/> - Eng tirishqoqlar turar joy va xarajatlarini qoplaydigan stipendiya olishadi! <br/> <br/> - Trening yakunida siz Germaniya shifokorlar yoki hamshiralar assotsiatsiyasidan kasbiy sertifikat olasiz, bu sizga davom etish imkoniyatini beradi!"
   },
   "footer": {
+    "contact": "Kontaktlar",
     "text":"Bog'lanish uchun <br/> Manzil: Toshkent sh., Oltintepa ko'chasi 28-uy. Landmark Parkent bozori <br/><br/> Raqam: +998 71-203-77-57"
-  }
+  },
+  "more_courses": "Kurslar haqida ko'proq",
+  "more": "Ko'proq"
 }

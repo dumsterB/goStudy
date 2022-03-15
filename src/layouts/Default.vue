@@ -1,9 +1,8 @@
 <template>
   <div>
     <v-app>
-      <v-navigation-drawer app v-model="drawer">
+      <v-navigation-drawer app v-model="drawer" temporary>
         <v-list shaped>
-          <v-subheader>REPORTS</v-subheader>
           <v-list-item-group
               v-model="selectedItem"
               color="primary"
@@ -52,6 +51,14 @@
                 <v-list-item-title v-scroll-to="'#contacts'"> {{ $t('headerDefault.contacts') }}</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
+            <div class="ml-2">
+              <v-btn  v-if="currentLanguage==='ru'" @click="changeLanguage('uz')" dark style="background: transparent;" elevation="0">
+                <country-flag  style="margin-top: -4px"  country='rus' size='normal'/>
+              </v-btn>
+              <v-btn v-if="currentLanguage==='uz'" @click="changeLanguage('ru')" dark style="background: transparent" elevation="0">
+                <country-flag style="margin-top: -4px"  country='uz' size='normal'/>
+              </v-btn>
+            </div>
           </v-list-item-group>
         </v-list>
       </v-navigation-drawer>
@@ -109,6 +116,7 @@
       <v-app-bar
           class="appBarDesktop"
           dark
+          id="appBar"
           style="height: 60px"
           elevation="1"
           app
@@ -136,27 +144,15 @@
           <v-btn text class="links" v-scroll-to="'#contacts'">
             {{ $t('headerDefault.contacts') }}
           </v-btn>
-          <v-menu offset-y>
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn
-                  text class="links"
-                  dark
-                  v-bind="attrs"
-                  v-on="on"
-                  elevation="0"
-              >
-                {{ currentLanguage }}
-              </v-btn>
-            </template>
-            <v-list>
-              <v-list-item
-                  v-for="language of languages"
-                  :key="language.val"
-              >
-                <v-btn elevation="0" @click="changeLanguage(language)">{{ language.text }}</v-btn>
-              </v-list-item>
-            </v-list>
-          </v-menu>
+          <div class="ml-2">
+            <v-btn  v-if="currentLanguage==='ru'" @click="changeLanguage('uz')" dark style="background: transparent;" elevation="0">
+              <country-flag  style="margin-top: -4px"  country='rus' size='normal'/>
+            </v-btn>
+            <v-btn v-if="currentLanguage==='uz'" @click="changeLanguage('ru')" dark style="background: transparent" elevation="0">
+              <country-flag style="margin-top: -4px"  country='uz' size='normal'/>
+            </v-btn>
+          </div>
+
         </div>
       </v-app-bar>
       <!-- Sizes your content based upon application components -->
@@ -177,8 +173,11 @@
               <v-layout fill-height align-center justify-center class="caruselLayout">
                 <v-flex xs12>
                   <p class=" white--text text-center  caroselText" v-html="carousel.text"></p>
-                  <v-card-actions class="text-center justify-center d-flex">
-                    <a class="caroselButton ">Подробнее</a>
+                  <v-card-actions class="text-center justify-center d-flex" v-if="carousel.url">
+                    <a class="caroselButton" @click="changeRoute(carousel.url)">Подробнее</a>
+                  </v-card-actions>
+                  <v-card-actions class="text-center justify-center d-flex" v-else   >
+                    <a class="caroselButton" style="text-decoration: none;color:white"  target="_blank" href="https://www.codifylab.com/">Подробнее</a>
                   </v-card-actions>
                 </v-flex>
               </v-layout>
@@ -202,7 +201,7 @@
             <v-row class="pa-10">
               <v-col>
                 <v-card-text>
-                  <h1>Контакты</h1>
+                  <h1>{{$t('footer.contact')}}</h1>
                   <div class="mt-10">
 
                     <p><strong v-html="$t('footer.text')"></strong></p>
@@ -257,54 +256,54 @@
 
 <script>
 
-import gsap from 'gsap'
+import CountryFlag from 'vue-country-flag'
 
 export default {
   name: "Default",
+  components: {
+    CountryFlag
+  },
   data() {
     return {
       open: true,
       selectedItem: '',
       drawer: false,
-      currentLanguage: 'Русский-язык',
+      currentLanguage: 'ru',
       languages: [{val: 'ru', text: 'Русский-язык'}, {val: 'uz', text: 'Uzbek-tili'}],
       carousels: [
         {
           text: this.$t("carousel.text-1"),
-          img: 'https://proprikol.ru/wp-content/uploads/2019/10/krasivye-kartinki-pragi-36.jpg'
+          img: 'https://proprikol.ru/wp-content/uploads/2019/10/krasivye-kartinki-pragi-36.jpg',
+          url:'/studyabroad'
         },
         {
           text: this.$t("carousel.text-2"),
-          img: 'https://systemlines.ru/wp-content/uploads/2021/02/o_kompanii.jpg'
+          img: 'https://systemlines.ru/wp-content/uploads/2021/02/o_kompanii.jpg',
         },
         {
           text: this.$t("carousel.text-3"),
-          img: 'https://w-dog.ru/wallpapers/2/2/503964941023421/praga-chexiya-maj-2015-g-utro.jpg'
+          img: 'https://w-dog.ru/wallpapers/2/2/503964941023421/praga-chexiya-maj-2015-g-utro.jpg',
+          url:'/languageeducation'
         }
       ]
     }
   },
-  computed:{
-    carouselText1(){
-      return this.$t("carousel.text-1")
-    }
+  computed: {
   },
   methods: {
     changeDrawer() {
       this.open = !this.open
-      gsap.to('#mobile-menu', {
-        duration: 3,
-        y: 1,
-        opacity: 1,
-        ease: 'expo.out',
-      })
     },
     handlerRoute(route) {
       this.$router.push(route)
     },
     changeLanguage(val) {
-      this.$i18n.locale = val.val
-      this.currentLanguage = val.text
+      this.$i18n.locale = val
+      this.currentLanguage = val
+      console.log(val)
+    },
+    changeRoute(val){
+        this.$router.push(val)
     }
   }
 }

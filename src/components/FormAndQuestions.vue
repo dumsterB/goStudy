@@ -1,8 +1,8 @@
 <template>
 <div>
   <v-card dark class="questionFrom">
-  <p class="text-h5">Остались вопросы?</p>
-    <p>Заполните, пожалуйста, эту простую форму, и мы свяжемся с вами в течение рабочего дня и ответим на все ваши вопросы</p>
+  <p class="text-h5">{{$t('formOfQuestions.text')}}</p>
+    <p>{{$t('formOfQuestions.text_2')}}</p>
     <div>
 
   <v-form
@@ -23,9 +23,9 @@
         ></v-text-field>
         <v-text-field
             dark
-            v-model="email"
+            v-model="number"
             outlined
-            :rules="emailRules"
+            :rules="numberRules"
             label="Ваш телефон"
             required
         ></v-text-field>
@@ -40,10 +40,9 @@
       </v-col>
     </v-row>
 
-<p>Если вы оставите нам свой телефон,<br> то мы вам позвоним и бесплатно все расскажем.</p>
 <div class="d-flex justify-center">
 
-  <a class="serviceButton ">Отправить</a>
+  <a class="serviceButton " @click="handlerDialog">Отправить</a>
 </div>
 
   </v-form>
@@ -51,23 +50,27 @@
 
   </v-card>
   <hr class="formHr">
+  <QA :dialog.sync="dialog" ></QA>
 </div>
 </template>
 
 <script>
+import QA from './modals/QA'
 export default {
   name: "FormAndQuestions",
+  components:{
+    QA
+  },
   data: () => ({
     valid: true,
+    dialog:false,
     name: '',
     nameRules: [
-      v => !!v || 'Name is required',
-      v => (v && v.length <= 10) || 'Name must be less than 10 characters',
+      v => !!v || 'Пожалуйста, напишите свое имя',
     ],
-    email: '',
-    emailRules: [
-      v => !!v || 'E-mail is required',
-      v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+    number: '',
+    numberRules: [
+      v => !!v || 'Пожалуйста, напишите свой номер',
     ],
     select: null,
     items: [
@@ -80,14 +83,8 @@ export default {
   }),
 
   methods: {
-    validate () {
-      this.$refs.form.validate()
-    },
-    reset () {
-      this.$refs.form.reset()
-    },
-    resetValidation () {
-      this.$refs.form.resetValidation()
+    handlerDialog(){
+      this.dialog=!this.dialog
     },
   },
 }

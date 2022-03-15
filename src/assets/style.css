@@ -62,6 +62,7 @@ body {
 .buttonContactUs {
     position: fixed;
     right: 30px;
+    z-index: 999;
     bottom: 40px;
 }
 
@@ -203,7 +204,7 @@ body {
 
 .firstService {
     background: #013668;
-    height: 400px;
+    height: 440px;
 }
 
 .firstService .row {
@@ -213,7 +214,7 @@ body {
 
 .secondService {
     background: #19b5fe;
-    height: 400px;
+    height: 440px;
 }
 
 .secondService .row {
@@ -233,7 +234,7 @@ body {
 }
 
 .serviceCardTitle {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 1.5;
     color: white;
 }
@@ -279,7 +280,7 @@ body {
     .firstServiceLayout {
         display: block;
         justify-content: center;
-        margin-top: 10px;
+        margin-top: -5px;
     }
 
     .colInfo {
@@ -294,11 +295,11 @@ body {
     }
 
     .firstService {
-        height: 520px;
+        height: 550px;
     }
 
     .secondService {
-        height: 520px;
+        height: 550px;
     }
 
     .colImage {
@@ -364,7 +365,7 @@ body {
 
 .text-main {
     font-size: 2rem;
-    line-height: 1.3;
+    line-height:1.8;
     font-weight: 600;
     color: white;
 }
@@ -424,11 +425,11 @@ body {
 
 /*LanguageEducation*/
 .imageContentLanguageEducation {
-    height: 100vh;
+    height: 90vh;
     width: 100%;
-    background: url("https://www.askideas.com/media/49/The-Reichstag-Building-With-Stained-Glass-Dome-Picture.jpg") center;
+    background: url("../assets/img/languageEducation.jpeg") center;
     background-repeat: no-repeat;
-    box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, .5);
+    box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, .7);
 }
 
 .title-secondary {
