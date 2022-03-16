@@ -2,7 +2,7 @@
   <div class="">
     <div class="imageContent" id="mainStudy">
       <div class="imgContent">
-        <p class="title-main"> Высшее образование в Чехии: поступаем в государственный вуз</p>
+        <p class="title-main"> {{ $t('abroad.main_title') }}</p>
       </div>
       <div class="arrow-bottom">
         <v-icon class="icon-arrow animate__animated animate__heartBeat animate__slower animate__infinite">
@@ -11,170 +11,136 @@
       </div>
     </div>
     <div class="content mt-15 pa-4" id="aboutStudy">
-        <v-row>
-          <v-col md="7" lg="7" sm="12">
-            <div class="contentOfInfo">
-              <p class="subtitle-item">В Чехии вы можете бесплатно получить качественное европейское образование</p>
-              <p>Наш учебный центр специализируется на подготовке русскоязычных абитуриентов к поступлению в чешские
-                университеты на бесплатную форму обучения на чешском языке.</p>
-              <p class="adjustement">Учеба за рубежом – это ценный опыт жизни в другой стране и культуре, расширение
-                кругозора и перспектив, изучение иностранных языков и престижный диплом. Чехия привлекательна
-                доступностью высшего образования и его высоким качеством.</p>
-              <br>
-              <p>Чешский учебный центр GoStudy готовит к поступлению в университеты с 1998 года и имеет аккредитацию на
-                проведение государственного экзамена по чешскому языку. Качество обучения в GoStudy подтверждено
-                Министерством образования ЧР.</p>
-              <div class="timeline-content">
-                <p class="subtitle-item"> Что такое учеба в Чехии ?</p>
-                <v-timeline
-                    align-top
-                    dense
-                >
-                  <v-timeline-item
-                      class="timeline-dot "
-                      small
-                      v-for="(item,i) of pluses" :key="i"
-                  >
-                    <v-row class="pt-1">
-                      <v-col cols="12">
-                        <strong>{{ item }}</strong>
-                      </v-col>
-                    </v-row>
-                  </v-timeline-item>
-                </v-timeline>
-              </div>
+      <v-row>
+        <v-col md="7" lg="7" sm="12">
+          <div class="contentOfInfo">
+            <p class="subtitle-item">{{ $t('abroad.title') }}</p>
+            <p>{{ $t('abroad.text') }}</p>
 
-              <br>
-              <p>Бесплатное образование в Чехии – возможность, которой сейчас пользуется 38 тысяч иностранных студентов.
-                Высшее образование в Чехии имеет уникальные исторические традиции, следует современным трендам и с
-                каждым годом все выше оценивается в мировых рейтингах. В этом году в престижный рейтинг лучших вузов
-                мира QS World University вошли девять чешских университетов.
-                <br><br>
-                Среди лучших вузов мира – классические европейские университеты – Карлов университет в Праге, Масариков
-                университет в Брно, Университет Палацкого в Оломоуце или Остравский университет. Здесь можно получить
-                качественное лингвистическое, медицинское, педагогическое, гуманитарное, спортивное или
-                естественно-научное образование.
-                <br><br>
-                В рейтинг QS World University входят и высококлассные чешские технические университеты – Чешский
-                технический университет в Праге, Технический университет Брно, Высшая школа химических технологий в
-                Праге.
-                <br><br>
-                Кроме того, в Чехии находится одна из лучших бизнес-школ в мире – Высшая школа экономики в Праге и
-                престижные творческие академии – Академия исполнительных искусств в Праге, Высшая школа прикладного
-                искусства в Праге, Академия изобразительных искусств в Праге.</p>
-            <p class="subtitle-item"> Стать студентом чешского вуза и учиться бесплатно – реально</p>
+            <p class="adjustement">{{ $t('abroad.text_1') }}</p>
             <br>
-            <p>Обучение в государственных вузах Чехии бесплатное и для иностранцев. Но для того что поступить, вам будет
-              нужно выучить чешский язык на продвинутый уровень (В2), признать в Чехии документы о своем предыдущем
-              образовании, своевременно подготовить и подать заявление и документы в приемную комиссию и, конечно,
-              серьезно подготовиться к вступительным испытаниям.
-              <br><br>
-              Самостоятельно реализовать все этапы поступления сложно. Поэтому иностранные абитуриенты начинают свой
-              путь в Чехии с интенсивных годовых курсов чешского языка и подготовки к поступлению.
-              <br><br>
-              Чешский учебный центр GoStudy специализируется на комплексных годовых программах подготовки к поступлению
-              в чешские университеты, которые включают как обучение языку, так и сопровождение на всех этапах
-              поступления.
-              <br><br>
-              По окончании обучения студенты сдают экзамен по чешскому языку на уровень В2. Знание чешского языка на
-              продвинутом уровне позволяет им сдать вступительные экзамены на чешском языке и учиться в чешских
-              университетах бесплатно.</p>
+            <p>{{ $t('abroad.text_2') }}</p>
+            <div class="timeline-content">
+              <p class="subtitle-item"> {{ $t('abroad.title') }}</p>
+              <v-timeline
+                  align-top
+                  dense
+              >
+                <v-timeline-item
+                    class="timeline-dot "
+                    small
+                    v-for="(item,i) of pluses" :key="i"
+                >
+                  <v-row class="pt-1">
+                    <v-col cols="12">
+                      <strong>{{ $t(item) }}</strong>
+                    </v-col>
+                  </v-row>
+                </v-timeline-item>
+              </v-timeline>
             </div>
 
-          </v-col>
-          <v-col md="5" lg="5" sm="12"  class="studyAbroad ">
-            <div class="d-flex " style="justify-content: center">
-              <div>
+            <br>
+           <p v-html="$t('abroad.text_3')"></p>
+            <p class="subtitle-item">  {{$t('abroad.title_3')}}</p>
+            <br>
+         <p v-html="$t('abroad.text_4')"></p>
+          </div>
+
+        </v-col>
+        <v-col md="5" lg="5" sm="12" class="studyAbroad ">
+          <div class="d-flex " style="justify-content: center">
+            <div>
               <img height="450"
                    src="https://avatars.mds.yandex.net/get-zen_doc/3822405/pub_5f75d8aa85c72a7ce4407ca8_5f75d8e285c72a7ce440f0e8/scale_1200"
                    alt="">
               <img style="" height="450" src="https://st.astr.ru/gallery/55c3320c454dc/9297712.jpg" alt="">
               <img height="450" src="https://st-1.akipress.org/st_limon/4/1633317964_0.jpg" alt="">
               <img height="450" src="https://guu.ru/wp-content/uploads/LRM_EXPORT_20180706_131322.jpg" alt="">
-              </div>
             </div>
+          </div>
+        </v-col>
+      </v-row>
+      <div class="timiline-abroad mt-10" id="advantageStudy">
+        <v-row class="pa-10">
+          <v-col cols="12" md="3" sm="12" lg="3">
+            <p class="text-h5" v-html="$t('abroad.timiline_title_1')"></p>
+            <v-timeline
+                align-top
+                dense
+            >
+              <v-timeline-item
+                  class="timeline-dot "
+                  small
+                  v-for="(item,i) of advantages4" :key="i"
+              >
+                <v-row class="pt-1">
+                  <v-col cols="12">
+                    <p>{{ item }}</p>
+                  </v-col>
+                </v-row>
+              </v-timeline-item>
+            </v-timeline>
+          </v-col>
+          <v-col cols="12" md="3" sm="12" lg="3">
+            <p class="text-h5">{{$t('abroad.timiline_title_2')}}</p>
+            <v-timeline
+                align-top
+                dense
+            >
+              <v-timeline-item
+                  class="timeline-dot "
+                  small
+                  v-for="(item,i) of advantages2" :key="i"
+              >
+                <v-row class="pt-1">
+                  <v-col cols="12">
+                    <p>{{ item }}</p>
+                  </v-col>
+                </v-row>
+              </v-timeline-item>
+            </v-timeline>
+          </v-col>
+          <v-col cols="12" md="3" sm="12" lg="3">
+            <p class="text-h5">{{$t('abroad.timiline_title_3')}}</p>
+            <v-timeline
+                align-top
+                dense
+            >
+              <v-timeline-item
+                  class="timeline-dot "
+                  small
+                  v-for="(item,i) of advantages3" :key="i"
+              >
+                <v-row class="pt-1">
+                  <v-col cols="12">
+                    <p>{{ item }}</p>
+                  </v-col>
+                </v-row>
+              </v-timeline-item>
+            </v-timeline>
+          </v-col>
+
+          <v-col cols="12" md="3" sm="12" lg="3">
+            <p class="text-h5">{{$t('abroad.timiline_title_4')}}</p>
+            <v-timeline
+                align-top
+                dense
+            >
+              <v-timeline-item
+                  class="timeline-dot "
+                  small
+                  v-for="(item,i) of advantages1" :key="i"
+              >
+                <v-row class="pt-1">
+                  <v-col cols="12">
+                    <p>{{ item }}</p>
+                  </v-col>
+                </v-row>
+              </v-timeline-item>
+            </v-timeline>
           </v-col>
         </v-row>
-      <div class="timiline-abroad mt-10" id="advantageStudy">
-            <v-row class="pa-10">
-              <v-col cols="12" md="3" sm="12" lg="3">
-                <p class="text-h5">Мы обеспечим <br> вам</p>
-                <v-timeline
-                    align-top
-                    dense
-                >
-                  <v-timeline-item
-                      class="timeline-dot "
-                      small
-                      v-for="(item,i) of advantages4" :key="i"
-                  >
-                    <v-row class="pt-1">
-                      <v-col cols="12">
-                        <p>{{ item }}</p>
-                      </v-col>
-                    </v-row>
-                  </v-timeline-item>
-                </v-timeline>
-              </v-col>
-              <v-col cols="12" md="3" sm="12" lg="3">
-                <p class="text-h5">Программа учебного центра GoStudy</p>
-                <v-timeline
-                    align-top
-                    dense
-                >
-                  <v-timeline-item
-                      class="timeline-dot "
-                      small
-                      v-for="(item,i) of advantages2" :key="i"
-                  >
-                    <v-row class="pt-1">
-                      <v-col cols="12">
-                        <p>{{ item }}</p>
-                      </v-col>
-                    </v-row>
-                  </v-timeline-item>
-                </v-timeline>
-              </v-col>
-              <v-col cols="12" md="3" sm="12" lg="3">
-                <p class="text-h5">Что мы предлагаем участникам программы</p>
-                <v-timeline
-                    align-top
-                    dense
-                >
-                  <v-timeline-item
-                      class="timeline-dot "
-                      small
-                      v-for="(item,i) of advantages3" :key="i"
-                  >
-                    <v-row class="pt-1">
-                      <v-col cols="12">
-                        <p>{{ item }}</p>
-                      </v-col>
-                    </v-row>
-                  </v-timeline-item>
-                </v-timeline>
-              </v-col>
-
-              <v-col cols="12" md="3" sm="12" lg="3">
-                <p class="text-h5">На кого ориентирована наша учебная программа</p>
-                <v-timeline
-                    align-top
-                    dense
-                >
-                  <v-timeline-item
-                      class="timeline-dot "
-                      small
-                      v-for="(item,i) of advantages1" :key="i"
-                  >
-                    <v-row class="pt-1">
-                      <v-col cols="12">
-                        <p>{{ item }}</p>
-                      </v-col>
-                    </v-row>
-                  </v-timeline-item>
-                </v-timeline>
-              </v-col>
-            </v-row>
       </div>
     </div>
     <div id="questionsStudy">
@@ -185,44 +151,55 @@
 
 <script>
 import FormAndQuestions from "@/components/FormAndQuestions";
+
 export default {
   name: "StudyAbroad",
-  components:{
+  components: {
     FormAndQuestions
   },
   data() {
     return {
-      pluses: ['Бесплатное образование в государственных вузах', 'Высокое качество обучения',
-        'Классическое образование и новые специальности', 'Насыщенная культурная и научная жизнь в центре Европы',
-        'Возможность путешествовать по всей Европе', 'Много вариантов учебы по обмену в других странах Европы, а также в США, Канаде, Австралии или Японии', 'Перспектива карьеры в европейской компании'
+      pluses: [
+        'abroad.timiline_1',
+        'abroad.timiline_2',
+        'abroad.timiline_3',
+        'abroad.timiline_4',
+        'abroad.timiline_5',
+        'abroad.timiline_6',
+        'abroad.timiline_7',
       ],
-      advantages1:[
-          'На выпускников средних школ или колледжей России и стран СНГ',
-          'На выпускников бакалавриата, желающих поступить в Чехии в магистратуру',
-          'На выпускников высших учебных заведений, заинтересованных в бесплатном получении второго высшего образования'
+      advantages1: [
+        this.$t('abroad.timiline_item_16'),
+        this.$t('abroad.timiline_item_17'),
+        this.$t('abroad.timiline_item_18'),
       ],
-      advantages2:[
-          'Подготовка к поступлению в чешский университет на бесплатную форму обучения',
-          'Оформление долгосрочной чешской визы',
-          'Интенсивное изучение чешского языка с нуля до уровня В2',
-          'Знакомство с чешской и европейской культурой',
-          'Сдача престижного государственного экзамена по чешскому языку по окончании обучения'
+      advantages2: [
+        this.$t('abroad.timiline_item_7'),
+        this.$t('abroad.timiline_item_19'),
+        this.$t('abroad.timiline_item_8'),
+        this.$t('abroad.timiline_item_9'),
+        this.$t('abroad.timiline_item_10'),
       ],
-      advantages3:[
-          'Языковую и специальную подготовку к поступлению в государственные вузы Чехии',
-          'Консультации по выбору вуза и специальности и сопровождение процесса поступления',
-          'Помощь в подготовке всех документов, необходимых для жизни и учебы в Чехии',
-          'Организацию проживания',
-          'Кураторскую поддержку'
+      advantages3: [
+        this.$t('abroad.timiline_item_11'),
+        this.$t('abroad.timiline_item_12'),
+        this.$t('abroad.timiline_item_13'),
+        this.$t('abroad.timiline_item_14'),
+        this.$t('abroad.timiline_item_15'),
       ],
-      advantages4:[
-          'Консультации по вопросам образования',
-          'Встречу в аэропорту или на ж/д вокзале',
-          'Комфортное место проживания и помощь в решении бытовых вопросов',
-          'Помощь в ориентации в стране и городе после приезда',
-          'Помощь в выборе учебного заведения и подборе специальности',
-          'Подготовку к поступлению в выбранный вуз'
+      advantages4: [
+       this.$t('abroad.timiline_item_1'),
+        this.$t('abroad.timiline_item_2'),
+        this.$t('abroad.timiline_item_3'),
+        this.$t('abroad.timiline_item_4'),
+        this.$t('abroad.timiline_item_5'),
+        this.$t('abroad.timiline_item_6'),
       ]
+    }
+  },
+  computed:{
+    timiline_1(){
+      return this.$t('abroad.timiline_1')
     }
   }
 }
@@ -236,19 +213,24 @@ export default {
   bottom: 15%;
   left: 46%;
 }
-.studyAbroad{
+
+.studyAbroad {
   right: 5px;
 }
-.contentOfInfo{
+
+.contentOfInfo {
   padding: 30px;
 }
+
 .
+
 @media (max-width: 1000px) {
-  .contentOfInfo{
+  .contentOfInfo {
     padding: 5px;
   }
-  .title-main{
-    font-size: 3rem!important;
+
+  .title-main {
+    font-size: 3rem !important;
   }
 }
 </style>
