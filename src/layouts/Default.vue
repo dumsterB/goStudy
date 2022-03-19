@@ -164,6 +164,7 @@
               :key="i"
               :src="carousel.img"
               class="carouselImages"
+              style="box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, .3);"
               reverse-transition="fade-transition"
               transition="fade-transition"
           >
@@ -269,6 +270,7 @@ export default {
       selectedItem: '',
       drawer: false,
       currentLanguage: 'ru',
+      imgIt:'https://leaderid.s3.amazonaws.com/event_photo/206297/609e14c62ebcb260574967.jpg',
       languages: [{val: 'ru', text: 'Русский-язык'}, {val: 'uz', text: 'Uzbek-tili'}],
       carousels: [
         {
@@ -278,7 +280,7 @@ export default {
         },
         {
           text: this.$t("carousel.text-2"),
-          img: 'https://systemlines.ru/wp-content/uploads/2021/02/o_kompanii.jpg',
+          img: 'https://leaderid.s3.amazonaws.com/event_photo/206297/609e14c62ebcb260574967.jpg',
         },
         {
           text: this.$t("carousel.text-3"),
@@ -340,5 +342,8 @@ export default {
   .desctopHidden {
     display: none !important;
   }
+}
+.carouselImages{
+  box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, .3);
 }
 </style>

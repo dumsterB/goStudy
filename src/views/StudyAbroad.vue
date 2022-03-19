@@ -41,10 +41,10 @@
             </div>
 
             <br>
-           <p v-html="$t('abroad.text_3')"></p>
-            <p class="subtitle-item">  {{$t('abroad.title_3')}}</p>
+            <p v-html="$t('abroad.text_3')"></p>
+            <p class="subtitle-item"> {{ $t('abroad.title_3') }}</p>
             <br>
-         <p v-html="$t('abroad.text_4')"></p>
+            <p v-html="$t('abroad.text_4')"></p>
           </div>
 
         </v-col>
@@ -76,14 +76,14 @@
               >
                 <v-row class="pt-1">
                   <v-col cols="12">
-                    <p>{{ item }}</p>
+                    <p>{{ $t(item) }}</p>
                   </v-col>
                 </v-row>
               </v-timeline-item>
             </v-timeline>
           </v-col>
           <v-col cols="12" md="3" sm="12" lg="3">
-            <p class="text-h5">{{$t('abroad.timiline_title_2')}}</p>
+            <p class="text-h5">{{ $t('abroad.timiline_title_2') }}</p>
             <v-timeline
                 align-top
                 dense
@@ -95,14 +95,14 @@
               >
                 <v-row class="pt-1">
                   <v-col cols="12">
-                    <p>{{ item }}</p>
+                    <p>{{ $t(item) }}</p>
                   </v-col>
                 </v-row>
               </v-timeline-item>
             </v-timeline>
           </v-col>
           <v-col cols="12" md="3" sm="12" lg="3">
-            <p class="text-h5">{{$t('abroad.timiline_title_3')}}</p>
+            <p class="text-h5">{{ $t('abroad.timiline_title_3') }}</p>
             <v-timeline
                 align-top
                 dense
@@ -114,7 +114,7 @@
               >
                 <v-row class="pt-1">
                   <v-col cols="12">
-                    <p>{{ item }}</p>
+                    <p>{{ $t(item) }}</p>
                   </v-col>
                 </v-row>
               </v-timeline-item>
@@ -122,7 +122,7 @@
           </v-col>
 
           <v-col cols="12" md="3" sm="12" lg="3">
-            <p class="text-h5">{{$t('abroad.timiline_title_4')}}</p>
+            <p class="text-h5">{{ $t('abroad.timiline_title_4') }}</p>
             <v-timeline
                 align-top
                 dense
@@ -134,7 +134,7 @@
               >
                 <v-row class="pt-1">
                   <v-col cols="12">
-                    <p>{{ item }}</p>
+                    <p>{{ $t(item) }}</p>
                   </v-col>
                 </v-row>
               </v-timeline-item>
@@ -169,39 +169,35 @@ export default {
         'abroad.timiline_7',
       ],
       advantages1: [
-        this.$t('abroad.timiline_item_16'),
-        this.$t('abroad.timiline_item_17'),
-        this.$t('abroad.timiline_item_18'),
+        'abroad.timiline_item_16',
+        'abroad.timiline_item_17',
+        'abroad.timiline_item_18',
       ],
       advantages2: [
-        this.$t('abroad.timiline_item_7'),
-        this.$t('abroad.timiline_item_19'),
-        this.$t('abroad.timiline_item_8'),
-        this.$t('abroad.timiline_item_9'),
-        this.$t('abroad.timiline_item_10'),
+        'abroad.timiline_item_7',
+        'abroad.timiline_item_19',
+        'abroad.timiline_item_8',
+        'abroad.timiline_item_9',
+        'abroad.timiline_item_10',
       ],
       advantages3: [
-        this.$t('abroad.timiline_item_11'),
-        this.$t('abroad.timiline_item_12'),
-        this.$t('abroad.timiline_item_13'),
-        this.$t('abroad.timiline_item_14'),
-        this.$t('abroad.timiline_item_15'),
+        'abroad.timiline_item_11',
+        'abroad.timiline_item_12',
+        'abroad.timiline_item_13',
+        'abroad.timiline_item_14',
+        'abroad.timiline_item_15'
       ],
       advantages4: [
-       this.$t('abroad.timiline_item_1'),
-        this.$t('abroad.timiline_item_2'),
-        this.$t('abroad.timiline_item_3'),
-        this.$t('abroad.timiline_item_4'),
-        this.$t('abroad.timiline_item_5'),
-        this.$t('abroad.timiline_item_6'),
+        'abroad.timiline_item_1',
+        'abroad.timiline_item_2',
+        'abroad.timiline_item_3',
+        'abroad.timiline_item_4',
+        'abroad.timiline_item_5',
+        'abroad.timiline_item_6'
       ]
     }
   },
-  computed:{
-    timiline_1(){
-      return this.$t('abroad.timiline_1')
-    }
-  }
+  computed: {}
 }
 </script>
 

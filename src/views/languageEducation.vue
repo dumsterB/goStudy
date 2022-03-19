@@ -4,7 +4,7 @@
       <div class="imgContentLanguage">
         <p class="title-main">ProfItLingua</p>
         <p class="text-main mt-7">{{ $t('german.main_title') }}</p>
-        <div class="arrow-bottom">
+        <div class="arrow-bottom" style="margin-top: -5px">
           <v-icon class="icon-arrow animate__animated animate__heartBeat animate__slower animate__infinite">
             mdi-arrow-down
           </v-icon>
