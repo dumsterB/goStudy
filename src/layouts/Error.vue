@@ -1,26 +1,8 @@
 <template>
   <div>
     <v-app>
-
-      <v-app-bar
-          class="appBarDefault"
-          dark
-          elevation="1"
-          app
-      >
-        <v-app-bar-nav-icon class="hidden-sm-and-up " @click="drawer=!drawer"></v-app-bar-nav-icon>
-        <div class="logo">
-          <img  height="40" src="../assets/img/logo2.png" alt="">
-        </div>
-        <v-spacer></v-spacer>
-
-      </v-app-bar>
       <!-- Sizes your content based upon application components -->
       <v-main class="main" id="main">
-        <!-- Provides the application the proper gutter -->
-        <div>
-
-        </div>
         <router-view></router-view>
       </v-main>
 
@@ -38,13 +20,10 @@
             <v-row class="pa-10">
               <v-col>
                 <v-card-text>
-                  <h1>Контакты</h1>
+                  <h1>{{$t('footer.contact')}}</h1>
                   <div class="mt-10">
 
-                    <p class="text-sm-body-1"><strong>Адресс: </strong> 28 Oltintepa Street, Tashkent 100016, Uzbekistan
-                    </p>
-                    <p class="text-sm-body-1"><strong>Номер: </strong>+998 71-203-77-57
-                    </p>
+                    <p><strong v-html="$t('footer.text')"></strong></p>
 
                     <v-btn
                         class="mx-4 white--text"
@@ -89,56 +68,25 @@
         </v-footer>
 
       </div>
-
     </v-app>
   </div>
 </template>
-
 <script>
-
-import gsap from 'gsap'
-
 export default {
   name: "Default",
   data() {
-    return {
-      open: true,
-      drawer: false,
-      currentLanguage:'Русский-язык',
-      languages:[{val:'ru',text:'Русский-язык'},{val:'uz',text:'Uzbek-tili'}],
-      carousels: [
-        {
-          text: 'Ответы на самые важные вопросы <br /> об учебе в Чехии ',
-          img: 'https://w-dog.ru/wallpapers/2/2/503964941023421/praga-chexiya-maj-2015-g-utro.jpg'
-        },
-        {
-          text: 'Научитесь востребаванным професиям IT ',
-          img: 'https://systemlines.ru/wp-content/uploads/2021/02/o_kompanii.jpg'
-        },
-        {
-          text: 'Ответы на самые важные вопросы <br /> об учебе в Чехии ',
-          img: 'https://w-dog.ru/wallpapers/2/2/503964941023421/praga-chexiya-maj-2015-g-utro.jpg'
-        }
-      ]
-    }
-  }, methods: {
-    changeDrawer() {
-      this.open = !this.open
-      gsap.to('#mobile-menu', {
-        duration: 3,
-        y: 1,
-        opacity: 1,
-        ease: 'expo.out',
-      })
-    },
-    changeLanguage(val){
-      this.$i18n.locale=val.val
-      this.currentLanguage=val.text
-    }
+    return {}
   }
 }
 </script>
 
 <style scoped>
+.appBarDesktop .links {
+  color: white;
+}
+.appBarDesktop {
+  background: #013668 !important;
+}
+
 
 </style>

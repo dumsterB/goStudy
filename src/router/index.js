@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Error from '../components/Error.vue'
 
 Vue.use(VueRouter)
 
@@ -32,6 +33,14 @@ const routes = [
     component: ()=>import('../views/StudyAbroad'),
     meta:{
       layout: 'StudyAbroad'
+    }
+  },
+  {
+    path: '/:catchAll(.*)*',
+    component:Error,
+    name:"Error",
+    meta:{
+      layout:'Error'
     }
   }
 ]
