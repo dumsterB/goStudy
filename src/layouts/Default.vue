@@ -52,11 +52,13 @@
               </v-list-item-content>
             </v-list-item>
             <div class="ml-2">
-              <v-btn  v-if="currentLanguage==='ru'" @click="changeLanguage('uz')" dark style="background: transparent;" elevation="0">
-                <country-flag  style="margin-top: -4px"  country='rus' size='normal'/>
+              <v-btn v-if="currentLanguage==='ru'" @click="changeLanguage('uz')" dark style="background: transparent;"
+                     elevation="0">
+                <country-flag style="margin-top: -4px" country='rus' size='normal'/>
               </v-btn>
-              <v-btn v-if="currentLanguage==='uz'" @click="changeLanguage('ru')" dark style="background: transparent" elevation="0">
-                <country-flag style="margin-top: -4px"  country='uz' size='normal'/>
+              <v-btn v-if="currentLanguage==='uz'" @click="changeLanguage('ru')" dark style="background: transparent"
+                     elevation="0">
+                <country-flag style="margin-top: -4px" country='uz' size='normal'/>
               </v-btn>
             </div>
           </v-list-item-group>
@@ -129,14 +131,16 @@
             {{ $t('headerDefault.aboutUs') }}
           </v-btn>
           <v-btn text class="links">
-            <a style="text-decoration: none;color:white" target="_blank" href="https://www.codifylab.com/">
+            <a class="menu_links" target="_blank" href="https://www.codifylab.com/">
               {{ $t('headerDefault.coursesIt') }}</a>
           </v-btn>
-          <v-btn text class="links" @click="handlerRoute('languageeducation')">
-            {{ $t('headerDefault.germanyLanguage') }}
+          <v-btn text class="links">
+            <a class="menu_links" target="_blank"
+               href="https://german.profitlingua.uz/">{{ $t('headerDefault.germanyLanguage') }}</a>
           </v-btn>
-          <v-btn text class="links" @click="handlerRoute('studyabroad')">
-            {{ $t('headerDefault.studyInCzech') }}
+          <v-btn text class="links">
+            <a class="menu_links" target="_blank" href="https://gostudy.profitlingua.uz/">
+              {{ $t('headerDefault.studyInCzech') }} </a>
           </v-btn>
           <v-btn text class="links" v-scroll-to="'#partners'">
             {{ $t('headerDefault.partners') }}
@@ -145,11 +149,13 @@
             {{ $t('headerDefault.contacts') }}
           </v-btn>
           <div class="ml-2">
-            <v-btn  v-if="currentLanguage==='ru'" @click="changeLanguage('uz')" dark style="background: transparent;" elevation="0">
-              <country-flag  style="margin-top: -4px"  country='rus' size='normal'/>
+            <v-btn v-if="currentLanguage==='ru'" @click="changeLanguage('uz')" dark style="background: transparent;"
+                   elevation="0">
+              <country-flag style="margin-top: -4px" country='rus' size='normal'/>
             </v-btn>
-            <v-btn v-if="currentLanguage==='uz'" @click="changeLanguage('ru')" dark style="background: transparent" elevation="0">
-              <country-flag style="margin-top: -4px"  country='uz' size='normal'/>
+            <v-btn v-if="currentLanguage==='uz'" @click="changeLanguage('ru')" dark style="background: transparent"
+                   elevation="0">
+              <country-flag style="margin-top: -4px" country='uz' size='normal'/>
             </v-btn>
           </div>
 
@@ -175,10 +181,7 @@
                 <v-flex xs12>
                   <p class=" white--text text-center  caroselText" v-html="carousel.text"></p>
                   <v-card-actions class="text-center justify-center d-flex" v-if="carousel.url">
-                    <a class="caroselButton" @click="changeRoute(carousel.url)">Подробнее</a>
-                  </v-card-actions>
-                  <v-card-actions class="text-center justify-center d-flex" v-else   >
-                    <a class="caroselButton" style="text-decoration: none;color:white"  target="_blank" href="https://www.codifylab.com/">Подробнее</a>
+                    <a class="caroselButton menu_links" target="_blank" :href="carousel.url">Подробнее</a>
                   </v-card-actions>
                 </v-flex>
               </v-layout>
@@ -202,7 +205,7 @@
             <v-row class="pa-10">
               <v-col>
                 <v-card-text>
-                  <h1>{{$t('footer.contact')}}</h1>
+                  <h1>{{ $t('footer.contact') }}</h1>
                   <div class="mt-10">
 
                     <p><strong v-html="$t('footer.text')"></strong></p>
@@ -211,25 +214,31 @@
                         class="mx-4 white--text"
                         icon
                     >
-                      <v-icon size="40px">
-                        mdi-facebook
-                      </v-icon>
+                      <a class="menu_links" target="_blank" href="https://www.facebook.com/profitlingua.uz/">
+                        <v-icon size="40px">
+                          mdi-facebook
+                        </v-icon>
+                      </a>
                     </v-btn>
                     <v-btn
                         class="mx-4 white--text"
                         icon
                     >
-                      <v-icon size="40px">
-                        mdi-phone
-                      </v-icon>
+                      <a class="menu_links" href="tel:+998 71-203-77-57">
+                        <v-icon size="40px">
+                          mdi-phone
+                        </v-icon>
+                      </a>
                     </v-btn>
                     <v-btn
                         class="mx-4 white--text"
                         icon
                     >
-                      <v-icon size="40px">
-                        mdi-instagram
-                      </v-icon>
+                      <a class="menu_links" target="_blank" href="https://www.instagram.com/profit.lingua/">
+                        <v-icon size="40px">
+                          mdi-instagram
+                        </v-icon>
+                      </a>
                     </v-btn>
                   </div>
                 </v-card-text>
@@ -270,28 +279,28 @@ export default {
       selectedItem: '',
       drawer: false,
       currentLanguage: 'ru',
-      imgIt:'https://leaderid.s3.amazonaws.com/event_photo/206297/609e14c62ebcb260574967.jpg',
+      imgIt: 'https://leaderid.s3.amazonaws.com/event_photo/206297/609e14c62ebcb260574967.jpg',
       languages: [{val: 'ru', text: 'Русский-язык'}, {val: 'uz', text: 'Uzbek-tili'}],
       carousels: [
         {
           text: this.$t("carousel.text-1"),
           img: 'https://proprikol.ru/wp-content/uploads/2019/10/krasivye-kartinki-pragi-36.jpg',
-          url:'/studyabroad'
+          url: 'https://german.profitlingua.uz/'
         },
         {
           text: this.$t("carousel.text-2"),
           img: 'https://leaderid.s3.amazonaws.com/event_photo/206297/609e14c62ebcb260574967.jpg',
+          url: 'https://www.codifylab.com/'
         },
         {
           text: this.$t("carousel.text-3"),
           img: 'https://w-dog.ru/wallpapers/2/2/503964941023421/praga-chexiya-maj-2015-g-utro.jpg',
-          url:'/languageeducation'
+          url: 'https://gostudy.profitlingua.uz/'
         }
       ]
     }
   },
-  computed: {
-  },
+  computed: {},
   methods: {
     changeDrawer() {
       this.open = !this.open
@@ -304,8 +313,8 @@ export default {
       this.currentLanguage = val
       console.log(val)
     },
-    changeRoute(val){
-        this.$router.push(val)
+    changeRoute(val) {
+      this.$router.push(val)
     }
   }
 }
@@ -343,7 +352,14 @@ export default {
     display: none !important;
   }
 }
-.carouselImages{
+
+.carouselImages {
   box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, .3);
+}
+
+.menu_links {
+  color: white;
+  text-decoration: none;
+  list-style: none
 }
 </style>

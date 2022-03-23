@@ -75,11 +75,11 @@
                     <v-card-actions
                       class="text-center serviceButtonCard d-flex"
                     >
-                      <a
-                        class="serviceButton"
-                        @click="courses('languageeducation')"
-                        >Подробнее</a
-                      >
+                      <a class="serviceButton"
+                         style="text-decoration: none"
+                         target="_blank"
+                         href="https://german.profitlingua.uz/"
+                      >Подробнее</a>
                     </v-card-actions>
                   </div>
                 </v-col>
@@ -104,9 +104,11 @@
                     <v-card-actions
                       class="text-center serviceButtonCard d-flex"
                     >
-                      <a class="serviceButton" @click="courses('studyabroad')"
-                        >Подробнее</a
-                      >
+                      <a class="serviceButton"
+                         style="text-decoration: none"
+                         target="_blank"
+                         href="https://gostudy.profitlingua.uz/"
+                        >Подробнее</a>
                     </v-card-actions>
                   </div>
                 </v-col>
@@ -205,11 +207,7 @@ import formAndQuestions from "@/components/FormAndQuestions";
 export default {
   name: "Home",
   components: {formAndQuestions},
-  methods: {
-    courses(value) {
-      this.$router.push(value);
-    },
-  },
+  methods: {},
 };
 </script>
 <style>

@@ -66,7 +66,7 @@ export default {
     form: {
       name: '',
       phone: '',
-      message: '',
+      question: '',
     },
 
     nameRules: [
@@ -90,14 +90,15 @@ export default {
     submitHandler() {
       let data = {
         name: this.form.name,
-        question: this.form.message,
-        phone: this.phone
+        question: this.form.question,
+        phone: this.form.phone,
+        email:'vdsvdsvsd@fewfw.few'
       }
       let formData = new FormData()
       for (let key in data) {
         formData.append(key, data[key]);
       }
-      axios.post('https://www.profitlingua.uz/form', formData)
+      axios.post('https://profitlingua.uz/form/', formData)
           .then((res) => {
             if (res && res.data) {
               this.dialog = !this.dialog
@@ -110,7 +111,7 @@ export default {
            this.form.name=''
            this.form.message=''
            this.form.phone=''
-           this.valid=false
+           this.$refs.form.reset()
     },
   },
 }

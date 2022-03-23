@@ -1,7 +1,7 @@
 <template>
   <div>
-  <div class="error-page">
-    <img height="500" width="500" src="../assets/img/3793096.jpg" alt="">
+  <div class="error-page" style="margin-left: -30px">
+    <img height="350" width="300" src="../assets/img/3793096.jpg" alt="">
   </div>
   <div class="error-page">
     <router-link to="/">Назад</router-link>
